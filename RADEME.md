@@ -3,11 +3,11 @@
  This part of the code creates an AI chatbot (Car-Bot) that can:
 
 
- . Get the car ready
+ * Get the car ready
 
- . Start driving in auto mode
+ * Start driving in auto mode
  
- . Stop the car when required
+ * Stop the car when required
 
 
 
@@ -17,9 +17,9 @@
 
 ### What's Happening?
 
-. You're installing google-generativeai, the official Python library for Google's Gemini AI models.
+* You're installing google-generativeai, the official Python library for Google's Gemini AI models.
 
-. The -U flag means "upgrade if needed", and -q makes the installation quieter.
+* The -U flag means "upgrade if needed", and -q makes the installation quieter.
 
 #### 🛠 Real-world example:
 
@@ -38,9 +38,9 @@ Think of this as installing an app on your phone before using it.
 
 ### What's Happening?
 
-. userdata.get("GOOGLE_API_KEY"): Retrieves the API key securely from Colab's user data.
+* userdata.get("GOOGLE_API_KEY"): Retrieves the API key securely from Colab's user data.
 
-. genai.configure(...): Configures Gemini AI with your API key so it can process requests.
+* genai.configure(...): Configures Gemini AI with your API key so it can process requests.
 
 #### 🛠 Real-world example:
 
@@ -67,9 +67,9 @@ Think of this as logging into an AI assistant using your account before it can p
 
 ### What's Happening?
 
-. These functions simulate how a car responds to voice commands.
+* These functions simulate how a car responds to voice commands.
 
-. When called, they print a message about the car's current action.
+* When called, they print a message about the car's current action.
 
 #### 🛠 Real-world example:
 
@@ -92,9 +92,9 @@ This is like a self-driving car assistant where saying "start driving" makes the
 
 ### What's Happening?
 
-. tools=car_controls: Gemini AI is given control over the car functions.
+* tools=car_controls: Gemini AI is given control over the car functions.
 
-. system_instruction=instruction: Defines the bot’s role and rules.
+* system_instruction=instruction: Defines the bot’s role and rules.
 
 #### 🛠 Real-world example:
 
@@ -117,11 +117,11 @@ Think of this as training a new self-driving car AI on how to respond to differe
 
 ### What's Happening?
 
-. This function creates a tool configuration that decides:
+ * This function creates a tool configuration that decides:
 
-  . How the AI calls functions.
+  * How the AI calls functions.
 
-  . Which functions it is allowed to call.
+  * Which functions it is allowed to call.
 
 #### 🛠 Real-world example:
 
@@ -141,9 +141,9 @@ This is like setting parental controls on a TV—deciding what the AI can and ca
 
 ### What's Happening?
 
-. The AI responds without calling functions.
+* The AI responds without calling functions.
 
-. "none" mode means the AI will only generate text.
+* "none" mode means the AI will only generate text.
 
 #### 🛠 Real-world example:
 
@@ -163,9 +163,9 @@ This is like asking Siri or Google Assistant about its features, and it replies 
 
 ### What's Happening?
 
-. "auto" mode allows the AI to automatically call functions when needed.
+* "auto" mode allows the AI to automatically call functions when needed.
 
-. It executes ready_car() when the user says "ready the car".
+* It executes ready_car() when the user says "ready the car".
 
 #### 🛠 Real-world example:
 
