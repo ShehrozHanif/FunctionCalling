@@ -186,11 +186,11 @@ This is like saying "Turn on the engine", and the car automatically starts.
 
 ### What's Happening?
 
-. "any" mode allows AI to choose which functions to call.
+* "any" mode allows AI to choose which functions to call.
 
-. Only drive_the_car and stop_the_car are available.
+* Only drive_the_car and stop_the_car are available.
 
-. The AI decides that if the speed is too high, it should stop the car.
+* The AI decides that if the speed is too high, it should stop the car.
 
 #### 🛠 Real-world example:
 
