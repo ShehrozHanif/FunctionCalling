@@ -1,3 +1,32 @@
+# What is Function Calling?
+
+Function calling in AI (especially in models like Google's Gemini or OpenAI's GPT) allows the AI to trigger specific functions instead of just responding with text. This means that instead of the AI just giving an answer, it can perform real actions by calling predefined functions.
+
+Think of it like this:
+
+* Normally, when you ask an AI **"What is 2 + 2?"**, it just responds with "4".
+* But with **function calling**, if you ask **"Turn on the lights"**, the AI can actually **call a function** that controls smart lights in your house.
+
+## How Function Calling Works
+
+### 1. Define Functions:
+
+* You create functions that perform specific tasks.
+
+* Example: A function to turn on the lights in your house.
+
+### 2. Configure the AI Model:
+
+* You tell the AI which functions it is allowed to call.
+
+* Example: The AI can call "turn_on_lights" but not "delete_all_files" (for safety!).
+
+### 3. AI Decides When to Call a Function:
+
+* When you send a message like "Make my room bright", the AI understands the intent and calls the "turn_on_lights" function.
+
+* Instead of just replying with "Okay, you can turn on the lights manually.", it actually executes the function.
+
 # 🚗 First Scenario: Car-Bot AI
  
  This part of the code creates an AI chatbot (Car-Bot) that can:
