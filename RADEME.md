@@ -30,10 +30,10 @@ Think of this as installing an app on your phone before using it.
 ## 🔹 Step 2: Import and Configure API Key
 
 
-from google.colab import userdata
-import google.generativeai as genai
+     from google.colab import userdata
+    import google.generativeai as genai
 
-genai.configure(api_key=userdata.get("GOOGLE_API_KEY"))
+    genai.configure(api_key=userdata.get("GOOGLE_API_KEY"))
 
 
 ### What's Happening?
@@ -51,17 +51,17 @@ Think of this as logging into an AI assistant using your account before it can p
 
 ## 🔹 Step 3: Define Car Control Functions
 
-def ready_car():
-    """Get the car ready for drive."""
-    print("CARBOT: Car is ready for drive.")
+    def ready_car():
+        """Get the car ready for drive."""
+        print("CARBOT: Car is ready for drive.")
 
-def drive_the_car():
-    """Set the drive in auto mode. Car must be ready before drive."""
-    print(f"CARBOT: Car is in auto drive mode.")
+    def drive_the_car():
+        """Set the drive in auto mode. Car must be ready before drive."""
+        print(f"CARBOT: Car is in auto drive mode.")
 
-def stop_the_car():
-    """Press the brake and stop the car."""
-    print("CARBOT: Stop the Car.")
+    def stop_the_car():
+        """Press the brake and stop the car."""
+        print("CARBOT: Stop the Car.")
 
 
 
@@ -80,14 +80,14 @@ This is like a self-driving car assistant where saying "start driving" makes the
 
 ## 🔹 Step 4: Create the AI Model
 
-car_controls = [ready_car, drive_the_car, stop_the_car]
-instruction = "You are a CAR bot. You can ready the car before drive and drive the car in auto mode and can stop the car when required."
+    car_controls = [ready_car, drive_the_car, stop_the_car]
+    instruction = "You are a CAR bot. You can ready the car before drive and drive the car in auto mode and can stop the car when required."
 
-model = genai.GenerativeModel(
-    "models/gemini-1.5-pro", tools=car_controls, system_instruction=instruction
-)
+    model = genai.GenerativeModel(
+        "models/gemini-1.5-pro", tools=car_controls, system_instruction=instruction
+    )
 
-chat = model.start_chat()
+    chat = model.start_chat()
 
 
 ### What's Happening?
@@ -105,14 +105,14 @@ Think of this as training a new self-driving car AI on how to respond to differe
 
 ## 🔹 Step 5: Ask the Car-Bot What It Can Do
 
-from google.generativeai.types import content_types
-from collections.abc import Iterable
+    from google.generativeai.types import content_types
+    from collections.abc import Iterable
 
-def tool_config_from_mode(mode: str, fns: Iterable[str] = ()):
-    """Create a tool config with the specified function calling mode."""
-    return content_types.to_tool_config(
-        {"function_calling_config": {"mode": mode, "allowed_function_names": fns}}
-    )
+    def tool_config_from_mode(mode: str, fns: Iterable[str] = ()):
+        """Create a tool config with the specified function calling mode."""
+        return content_types.to_tool_config(
+            {"function_calling_config": {"mode": mode, "allowed_function_names": fns}}
+        )
 
 
 ### What's Happening?
@@ -131,13 +131,13 @@ This is like setting parental controls on a TV—deciding what the AI can and ca
 
 ## 🔹 Step 6: Test the AI Without Function Calling
 
-tool_config = tool_config_from_mode("none")
+        tool_config = tool_config_from_mode("none")
 
-response = chat.send_message(
-    "Hello car-bot, what can you do?", tool_config=tool_config
-)
-print(response.text)
-
+        response = chat.send_message(
+            "Hello car-bot, what can you do?", tool_config=tool_config
+        )
+        print(response.text)
+ 
 
 ### What's Happening?
 
@@ -154,11 +154,11 @@ This is like asking Siri or Google Assistant about its features, and it replies 
 
 ## 🔹 Step 7: Auto-Execute "Ready the Car"
 
-tool_config = tool_config_from_mode("auto")
+    tool_config = tool_config_from_mode("auto")
 
-response = chat.send_message("ready the car", tool_config=tool_config)
-print(response.parts[0])
-chat.rewind();
+    response = chat.send_message("ready the car", tool_config=tool_config)
+    print(response.parts[0])
+    chat.rewind();
 
 
 ### What's Happening?
@@ -176,12 +176,12 @@ This is like saying "Turn on the engine", and the car automatically starts.
 
 ## 🔹 Step 8: Control Which Functions Can Be Called
 
-available_fns = ["drive_the_car", "stop_the_car"]
+    available_fns = ["drive_the_car", "stop_the_car"]
 
-tool_config = tool_config_from_mode("any", available_fns)
+    tool_config = tool_config_from_mode("any", available_fns)
 
-response = chat.send_message("its too high speed", tool_config=tool_config)
-print(response.parts[0])
+    response = chat.send_message("its too high speed", tool_config=tool_config)
+    print(response.parts[0])
 
 
 ### What's Happening?
