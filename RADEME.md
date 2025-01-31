@@ -190,7 +190,7 @@ This is like saying "Turn on the engine", and the car automatically starts.
 
 . Only drive_the_car and stop_the_car are available.
 
-    . The AI decides that if the speed is too high, it should stop the car.
+. The AI decides that if the speed is too high, it should stop the car.
 
 #### 🛠 Real-world example:
 
